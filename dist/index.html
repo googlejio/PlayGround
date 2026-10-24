@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#2b2342" />
+  <meta name="description" content="HELLO — a tiny robot, a big sky, and one friendly word. A 3D sky-running game for phone and tablet." />
+  <title>HELLO — A Sky-High Adventure</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%8B%3C/text%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="/assets/index-DL-TUp01.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DVIAj8DY.css">
+</head>
+<body>
+  <main id="app" aria-label="HELLO 3D game">
+    <div id="stage" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <section id="hud" class="hidden" aria-label="Game status">
+      <div class="hud-row">
+        <div class="score-card">
+          <span class="eyebrow">SCORE</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="word" id="word" aria-label="Word progress">
+          <span class="word-letter">H</span>
+          <span class="word-letter">E</span>
+          <span class="word-letter">L</span>
+          <span class="word-letter">L</span>
+          <span class="word-letter">O</span>
+        </div>
+        <div class="hud-right">
+          <div class="hearts" id="hearts" aria-label="Three hearts">
+            <span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span>
+          </div>
+          <button id="pause" class="icon-btn" aria-label="Pause game">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="2"/><rect x="14" y="4" width="4" height="16" rx="2"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="toast" class="toast" aria-live="polite"></div>
+    </section>
+
+    <section id="menu" class="screen">
+      <div class="menu-bg"></div>
+      <div class="menu-content">
+        <h1 class="logo" aria-label="Hello">
+          <span style="--i:0">H</span><span style="--i:1">E</span><span style="--i:2">L</span><span style="--i:3">L</span><span style="--i:4">O</span>
+        </h1>
+        <p class="tagline">A tiny robot. A big sky.<br />One friendly word.</p>
+        <div class="menu-actions">
+          <button id="play" class="primary-btn">
+            <span>Play</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+          </button>
+          <div class="hints">
+            <span class="hint"><i class="hint-drag"></i>Drag to steer</span>
+            <span class="hint"><i class="hint-tap"></i>Tap to jump</span>
+          </div>
+          <p class="best-line">BEST <b id="menu-best">0</b></p>
+        </div>
+      </div>
+      <button id="mute" class="icon-btn mute-btn" aria-label="Toggle sound">
+        <svg class="sound-on" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.2a5 5 0 0 1 0 7.6M18.4 5.6a8.5 8.5 0 0 1 0 12.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="sound-off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <p class="credit">Made with sunshine &amp; Three.js</p>
+    </section>
+
+    <section id="over" class="screen modal-screen hidden" role="dialog" aria-modal="true" aria-labelledby="over-title">
+      <div class="panel">
+        <p class="panel-eyebrow">THE SKY GOT A LITTLE DARK</p>
+        <h2 id="over-title" class="panel-title">Oh no!</h2>
+        <div class="result-grid">
+          <div><span class="eyebrow">SCORE</span><strong id="final-score">0</strong></div>
+          <div><span class="eyebrow">BEST</span><strong id="final-best">0</strong></div>
+        </div>
+        <p id="over-note" class="panel-note">The clouds send their regards.</p>
+        <button id="again" class="primary-btn"><span>Play Again</span></button>
+      </div>
+    </section>
+
+    <section id="paused" class="screen modal-screen hidden" role="dialog" aria-modal="true" aria-labelledby="paused-title">
+      <div class="panel panel-small">
+        <p class="panel-eyebrow">TAKE A BREATH</p>
+        <h2 id="paused-title" class="panel-title">Paused</h2>
+        <p class="panel-note">The sky will wait for you.</p>
+        <button id="resume" class="primary-btn"><span>Resume</span></button>
+        <button id="quit" class="text-btn">Back to menu</button>
+      </div>
+    </section>
+
+    <div id="flash" class="flash" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
